@@ -1,0 +1,23 @@
+How to run
+=====================================================
+1. Edit file "Eionet2_SPO_Lists_Backup.ps1" (use Notepad, ISE etc.).
+2. Update the variable $SPO_SITE_PATH with the site location where the Eionet 2 lists are located. Save the file.
+3. Open a PowerShell command line prompt.
+4. Navigate to the location where the file "Eionet2_SPO_Lists_Backup.ps1" is located.
+5. Execute in the PowerShell command line prompt: ".\Eionet2_SPO_Lists_Backup.ps1".
+
+Notes
+=====================================================
+- First time you have to execute the script as a tenant admin and a local Windows admin (it is required in order to install properly the PnP module and to register the module permissions in Azure).
+- The first script command will download and install the PnP module on your system, if it is not already installed. Next time this will be automatically skipped (the script checks if the module PnP module is already installed).
+- The next script command is used to grant access in Azure for the PnP module functions. It will open a visual prompt with the user permissions to be granted. Next time this will be automatically skipped (if the PnP module is detected is already installed).
+Please make sure you grant/confirm the access rights requested in the window.
+- The SPO lists will be saved as .xml files and all of them will be automatically added to a zip archive, marked with the current timestamp in the name.
+
+
+IMPORTANT! Make sure you copy the zip archive (or the desired .xml backup files) to a safe backup location.
+
+Current run versions used
+=====================================================
+- PowerShell 5.1
+- PnP PowerShell module 1.12
